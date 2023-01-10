@@ -1,0 +1,23 @@
+from tkinter import *
+
+# Create the main window
+root = Tk()
+
+# Create a counter variable and set it to 0
+counter = 0
+
+# Create a function that increases the counter by 1 when the button is clicked
+def increase_counter():
+    global counter
+    counter += 1
+
+# Create a button widget
+button = Button(root, text="Increase Counter", command=increase_counter)
+button.pack()
+
+# Create a label widget to display the counter
+label = Label(root, text=f"Counter: {counter}")
+label.pack()
+
+# Run the main loop
+root.mainloop()
