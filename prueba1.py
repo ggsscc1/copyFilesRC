@@ -9,16 +9,15 @@ def changeStatus(status):
 
 # Create a function that copy files depending of the path
 def start_copy():
+    
     changeStatus("                                            ")
     changeStatus("Copeando archivos")
     
     #Establece la ruta de la carpeta de origen y la ruta de la carpeta de destino
-    #origen = r'C:\Users\Administrador\Desktop\PRUEBAS_PYTON\origen'
-    #destino = r'C:\Users\24\Desktop\copy files RC python\destino'
-    origen = r'C:\Users\24\Desktop\copy files RC python\origen'
-    #origen = '\dev\cdrom'
+    #origen = r"C:\Users\24\Desktop\copy files RC python\origen"
+    origen = ruta.get()
+    #os.path.normpath(origen)
     destino = r'C:\Users\24\Desktop\copy files RC python\destino'
-    #destino = r(ruta)
     # Obtiene la lista de archivos en la carpeta de origen
     archivos = os.listdir(origen)
 
@@ -28,7 +27,7 @@ def start_copy():
       shutil.copy(ruta_archivo, destino)
     changeStatus("                                             ")
     changeStatus("Finalizado")
-    print(ruta.get())
+    print("El origen es: ", origen)
     print('Los archivos han sido copiados con éxito')
     
 
