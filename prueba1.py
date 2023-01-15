@@ -16,7 +16,6 @@ def start_copy():
     #Establece la ruta de la carpeta de origen y la ruta de la carpeta de destino
     #origen = r"C:\Users\24\Desktop\copy files RC python\origen"
     origen = ruta.get()
-    #os.path.normpath(origen)
     destino = r'C:\Users\24\Desktop\copy files RC python\destino'
     # Obtiene la lista de archivos en la carpeta de origen
     archivos = os.listdir(origen)
@@ -25,6 +24,9 @@ def start_copy():
     for archivo in archivos:
       ruta_archivo = os.path.join(origen, archivo)
       shutil.copy(ruta_archivo, destino)
+
+    #change the operation status when finish and print by console
+    ruta_entry.delete(0, END); #borra ruta en textEntry una vez finalizado el proceso
     changeStatus("                                             ")
     changeStatus("Finalizado")
     print("El origen es: ", origen)
@@ -63,4 +65,5 @@ for child in mainframe.winfo_children():
 root.mainloop()
 
 
- 
+ #1 borrar ruta cuando acabe proceso
+ #2 click en boton y resetea estado
