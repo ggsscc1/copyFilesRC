@@ -2,7 +2,7 @@ listaMunicipios = 'AHUALULCO','ALAQUINES','AQUISMON','ARMADILLO_DE_LOS_INFANTE',
 
 #print(listaMunicipios[57])
 #buscar = input("Ingresa la ruta del archivo: ")
-buscar = r"D:\1955\SOLEDAD01_1955"
+#buscar = r"D:\1955\SOLEDAD01_1955"
 
 def manejaRutaOrigen(buscar):
     #desglosa ruta de disco y extrae el nombre del municipio, oficialia y año
@@ -30,3 +30,6 @@ def manejaRutaOrigen(buscar):
         if municipio in word:
             print("Encontrado")
             break
+    
+    lista = [year, valorMunicipio, numeroOficialia]
+    return lista

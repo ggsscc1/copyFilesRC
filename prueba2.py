@@ -19,15 +19,20 @@ def start_copy():
     #origen = r"C:\Users\24\Desktop\copy files RC python\origen"
     origen = ruta.get()
     destino = r'C:\Users\24\Desktop\copy files RC python\destino'
-    manejaRutaOrigen(origen) #funcion para manejar la ruta de origen y dividir respecto a municipio, oficialia
+    lista = manejaRutaOrigen(origen) #funcion para manejar la ruta de origen y dividir respecto a municipio, oficialia
     rutaPdf = navegacionCarpeta(origen) #funcion para llegar a la carpeta de pdfs
-    directory = "ihritik"
-    
+    year = lista[0]
+    municipio = lista[1]
+    oficialia = lista[2]
     #Create new directory
     # Path
-    path = os.path.join(destino, directory)
+    path = os.path.join(destino, year)
     os.makedirs(path)
-
+    path = os.path.join(path, str(municipio))
+    os.makedirs(path)
+    path = os.path.join(path, oficialia)
+    os.makedirs(path)
+    destino = path
     # Obtiene la lista de archivos en la carpeta de origen
     archivos = os.listdir(rutaPdf)
 
