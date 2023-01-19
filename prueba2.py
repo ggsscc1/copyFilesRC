@@ -9,6 +9,14 @@ from navegaCarpetas import *
 def changeStatus(status):
   ttk.Label(mainframe, text=status).grid(column=3, row=2, sticky=E)
 
+#Function that verify if the folder exist
+def verificaCarpeta(path):
+   if(os.path.exists(path) == False):
+      os.makedirs(path)
+   else:
+      os.chdir(path)
+
+
 # Function that copy files depending of the path
 def start_copy():
     
@@ -26,10 +34,12 @@ def start_copy():
     oficialia = lista[2]
     #Create new directory
     # Path
+    
     path = os.path.join(destino, year)
-    os.makedirs(path)
+    verificaCarpeta(path)
     path = os.path.join(path, str(municipio))
-    os.makedirs(path)
+    verificaCarpeta(path)
+    #os.makedirs(path)
     path = os.path.join(path, oficialia)
     os.makedirs(path)
     destino = path
